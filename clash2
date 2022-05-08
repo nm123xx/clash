@@ -1,0 +1,82 @@
+port: 7890
+socks-port: 7891
+allow-lan: true
+mode: Rule
+log-level: info
+external-controller: :9090
+proxies:
+  - {name: ☆官方频道：@bplm_02, server: baipiaolianmeng, port: 9999, type: ss, cipher: aes-256-gcm, password: CUndSZnYsPKcu6Kj8THVMBHD}
+  - {name: ☆更多节点加入以下电报群, server: baipiaolianmeng, port: 9999, type: ss, cipher: aes-256-gcm, password: CUndSZnYsPKcu6Kj8THVMBHD}
+  - {name: ☆电报群 ：@bplm_01, server: baipiaolianmeng, port: 9999, type: ss, cipher: aes-256-gcm, password: CUndSZnYsPKcu6Kj8THVMBHD}
+  - {name: ☆如需收费节点可私聊, server: baipiaolianmeng, port: 9999, type: ss, cipher: aes-256-gcm, password: CUndSZnYsPKcu6Kj8THVMBHD}
+  - {name: ☆群主机器人：@bplm_bot, server: baipiaolianmeng, port: 9999, type: ss, cipher: aes-256-gcm, password: CUndSZnYsPKcu6Kj8THVMBHD}
+  - {name: ☆白嫖联盟_______1, server: 169.197.142.99, port: 8118, type: ss, cipher: aes-256-gcm, password: cdBIDV42DCwnfIN}
+  - {name: ☆白嫖联盟_______2, server: 169.197.142.99, port: 9102, type: ss, cipher: aes-256-gcm, password: e4FCWrgpkji3QY}
+  - {name: ☆白嫖联盟_______3, server: 169.197.142.99, port: 5004, type: ss, cipher: aes-256-gcm, password: g5MeD6Ft3CWlJId}
+  - {name: ☆白嫖联盟_______4, server: 92.38.171.101, port: 50004, type: ss, cipher: aes-256-cfb, password: !<str> 4415934295}
+  - {name: ☆白嫖联盟_______5, server: 169.197.142.99, port: 8080, type: ss, cipher: aes-256-gcm, password: KixLvKzwjekG00rm}
+  - {name: ☆白嫖联盟_______6, server: 38.68.135.19, port: 7002, type: ss, cipher: aes-256-gcm, password: RexnBgU7EV5ADxG}
+  - {name: ☆白嫖联盟_______7, server: 185.126.116.117, port: 9041, type: ss, cipher: aes-256-cfb, password: U6qnYRhfyDmn8sgn}
+  - {name: ☆白嫖联盟_______8, server: 213.183.63.218, port: 9079, type: ss, cipher: aes-256-cfb, password: TPqX8edgbAURcAMb}
+  - {name: ☆白嫖联盟_______9, server: 185.126.116.117, port: 9020, type: ss, cipher: aes-256-cfb, password: BNmAXXxAHYpTRdzu}
+  - {name: ☆白嫖联盟_______10, server: 213.183.63.218, port: 9098, type: ss, cipher: aes-256-cfb, password: aLpQtfEZe445QyHk}
+  - {name: ☆白嫖联盟_______11, server: 213.183.63.218, port: 9093, type: ss, cipher: aes-256-cfb, password: wfLC2y7rzZyCmuyt}
+  - {name: ☆白嫖联盟_______12, server: 213.183.63.218, port: 9064, type: ss, cipher: aes-256-cfb, password: cp8pRSUAyLhTfVWH}
+proxy-groups:
+  - name: 🚀 节点选择
+    type: select
+    proxies:
+      - ♻️ 自动选择
+      - 🔯 故障转移
+      - 🔮 负载均衡
+      - DIRECT
+      - ☆官方频道：@bplm_02
+      - ☆更多节点加入以下电报群
+      - ☆电报群 ：@bplm_01
+      - ☆如需收费节点可私聊
+      - ☆群主机器人：@bplm_bot
+      - ☆白嫖联盟_______1
+      - ☆白嫖联盟_______2
+      - ☆白嫖联盟_______3
+      - ☆白嫖联盟_______4
+      - ☆白嫖联盟_______5
+      - ☆白嫖联盟_______6
+      - ☆白嫖联盟_______7
+      - ☆白嫖联盟_______8
+      - ☆白嫖联盟_______9
+      - ☆白嫖联盟_______10
+      - ☆白嫖联盟_______11
+      - ☆白嫖联盟_______12
+  - name: ♻️ 自动选择
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    proxies:
+      - ☆官方频道：@bplm_02
+      - ☆更多节点加入以下电报群
+      - ☆电报群 ：@bplm_01
+      - ☆如需收费节点可私聊
+      - ☆群主机器人：@bplm_bot
+      - ☆白嫖联盟_______1
+      - ☆白嫖联盟_______2
+      - ☆白嫖联盟_______3
+      - ☆白嫖联盟_______4
+      - ☆白嫖联盟_______5
+      - ☆白嫖联盟_______6
+      - ☆白嫖联盟_______7
+      - ☆白嫖联盟_______8
+      - ☆白嫖联盟_______9
+      - ☆白嫖联盟_______10
+      - ☆白嫖联盟_______11
+      - ☆白嫖联盟_______12
+  - name: 🔯 故障转移
+    type: fallback
+    url: http://www.gstatic.com/generate_204
+    interval: 180
+    proxies:
+      - ☆官方频道：@bplm_02
+      - ☆更多节点加入以下电报群
+      - ☆电报群 ：@bplm_01
+      - ☆如需收费节点可私聊
+      - ☆群主机器人：@bp
